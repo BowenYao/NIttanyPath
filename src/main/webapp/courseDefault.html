@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
+
+
+
+
+
+
+</style>
+<body class="w3-theme-l5">
+
+<!-- Navbar -->
+<div id="navbar" class="w3-top">
+    <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2"
+           href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+        <a href="/home" class="w3-bar-item w3-button w3-padding-large w3-hover-white"><i
+                class="fa fa-home w3-margin-right"></i>Nittany Path</a>
+        <!--<a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe"></i></a>-->
+        <a href="/profile" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"
+           title="Account Settings"><i class="fa fa-user"></i> My Account</a>
+        <a id="course-navbar" href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-theme-d4"
+           title="Course Title"></a>
+        <form action="logout" method="POST">
+            <input type="submit" value="Logout"
+                   class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white"
+                   title="Logout Button"/>
+        </form>
+    </div>
+</div>
+
+<div class="w3-container w3-content">
+    <br>
+    <br>
+    <div id="course-info-box" class="w3-container w3-card w3-white w3-round w3-margin">
+        <!--Course info box is left empty to be filled in programmatically with courses-->
+    </div>
+    <div id="Grades-box" class="w3-container w3-card w3-white w3-round w3-margin">
+        <h3>Homework Grades</h3>
+        <table id="homework-display" class="w3-table w3-striped w3-bordered">
+            <tr>
+                <th>Homework No.</th>
+                <th id="grade-header">Grade</th>
+                <th>Details</th>
+            </tr>
+        </table><br>
+        <div id="add-homework-div">
+            <form id = "add-homework" action="addAssignment" method="POST" hidden>
+                <input id="add-homework-course-id" type="hidden" name="course-id">
+                <input id="add-homework-section" type="hidden" name="section">
+                <input type="hidden" name="input-type" value="homework">
+                <label for="input-hw-details">HW Details: </label>
+                <input id="input-hw-details" type="text" name="hw-details">
+                <input type="submit" value="Add Homework"/>
+            </form>
+        </div>
+
+        <!--Middle column is left empty as this is filled in procedurally with homework-->
+
+        <h3>Exam Grades</h3>
+        <table id="exam-display" class="w3-table w3-striped w3-bordered">
+            <tr>
+                <th>Exam No.</th>
+                <th id="exam-grade-header">Grade</th>
+                <th>Details</th>
+            </tr>
+        </table><br>
+        <div id="add-exam-div">
+            <form id = "add-exam" action="addAssignment" method="POST" hidden>
+                <input id="add-exam-course-id" type="hidden" name="course-id">
+                <input id="add-exam-section" type="hidden" name="section">
+                <input type="hidden" name="input-type" value="exam">
+                <label for="input-exam-details">HW Details: </label>
+                <input id="input-exam-details" type="text" name="exam-details">
+                <input type="submit" value="Add Exam"/>
+            </form>
+        </div><br>
+    </div>
+    <div id="forum-box" class="w3-container w3-card w3-white w3-round w3-margin">
+        <h3>Forum</h3>
+        <h4 id="new-post-label" style="color:blue"><u>Create new post!</u></h4>
+        <form id="new-post-form" method="POST">
+            <div id="new-post-display" class="w3-container w3-card w3-white w3-round w3-margin" hidden><br>
+                <label><h4>Post Content:</h4></label>
+                <input class="w3-input" type="text" name="post-content"><br>
+                <input type="submit"><br><br>
+            </div>
+        </form>
+        <div id="post-display">
+            <!--Middle column is left empty as this is filled in procedurally with posts-->
+
+        </div>
+    </div>
+</div>
+<script id="courseScript">
+    document.getElementById("new-post-label").onclick=function(){
+        document.getElementById("new-post-display").removeAttribute("hidden");
+        document.getElementById("new-post-label").setAttribute("hidden","");
+    }
+    ||newline
+    var homework = document.getElementById("add-homework-label"); ||newline
+    if(homework!=null){
+    homework.onclick=function(){
+        document.getElementById("add-homework").removeAttribute("hidden");
+        homework.setAttribute("hidden","");
+    }
+    }
+    ||newline
+    var exam = document.getElementById("add-exam-label");||newline
+    if(exam!=null){
+    exam.onclick=function(){
+        document.getElementById("add-exam").removeAttribute("hidden");
+        exam.setAttribute("hidden","");
+    }
+    }
+    ||newline
+
+
+</script>
+</body>
+</html>
