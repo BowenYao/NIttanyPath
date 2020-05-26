@@ -18,13 +18,13 @@ Notice that email is only 6 characters. This is because I store emails as just t
 
 ## Landing Page
 
-![landingPage](C:\Users\Bowen Yao\PSU\Spring2020\Cmpsci431W\Phase2\landingPage.PNG)
+![landingPage](landingPage.PNG)
 
 The landing page is straightforward. It is taken from a template online and modified slightly. There are only three active elements to the page. The two buttons on the navigation bar at the top and the login button in the middle of the screen. The login buttons navigate the user to the login page while clicking the home button simply refreshes the landing page.
 
 ## Login Page
 
-![loginPage](C:\Users\Bowen Yao\PSU\Spring2020\Cmpsci431W\Phase2\loginPage.PNG)
+![loginPage](loginPage.PNG)
 
 The login page is also very simple at  the moment. It is the same template modified now to have a form. The two buttons in the navigation bar continue to serve the same purpose while inputting an email and password and then pressing the submit button sends a POST request to the backend servlet. Currently users can input their email with or without the @nittany.edu
 
@@ -38,9 +38,9 @@ As an aside the logout process boots the current user to the login page while re
 
 ## Home Page
 
-![homePage](C:\Users\Bowen Yao\PSU\Spring2020\Cmpsci431W\Phase2\homePage.PNG)
+![homePage](homePage.PNG)
 
-![homePage](C:\Users\Bowen Yao\PSU\Spring2020\Cmpsci431W\Phase2\homePage2.PNG)
+![homePage](homePage2.PNG)
 
 The home page is procedurally generated from a default page tailored to each specific user. Courses are split into enrolled courses and teaching courses as shown above although most students only have enrolled courses and teachers only have teaching courses so usually only one is shown. Each course is clickable and will send a Get request to the link "/course?COURSEID" where the COURSEID is the course ID of the course clicked. Unfortunately this means it doesn't quite work for teaching courses which often have overlapping course Ids but that is an easy fix.
 
